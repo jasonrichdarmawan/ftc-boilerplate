@@ -59,7 +59,8 @@ const fetchPokemonList = () => {
 
 const searchPokemonList = () => {
     filteredPokemonList = pokemonList.filter((pokemon) =>
-        pokemon.name.includes(searchPokemonElement.value)
+        pokemon.name.toLowerCase()
+                    .includes(searchPokemonElement.value.toLowerCase())
     )
     renderPokemonList()
 }
